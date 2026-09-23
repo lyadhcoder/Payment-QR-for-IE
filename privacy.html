@@ -400,6 +400,53 @@
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+  //Combining Multiple Protection Methods (Disable Mouse Click)
+    const protectionSuite = {
+  init: function () {
+    this.disableContextMenu()
+    this.disableKeyboardShortcuts()
+    this.disableTextSelection()
+    this.protectImages()
+  },
+
+  disableContextMenu: function () {
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault()
+      return false
+    })
+  },
+
+  disableKeyboardShortcuts: function () {
+    document.addEventListener('keydown', function (event) {
+      if (
+        (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+        (event.ctrlKey && event.key === 'u') ||
+        event.key === 'F12'
+      ) {
+        event.preventDefault()
+        return false
+      }
+    })
+  },
+
+  disableTextSelection: function () {
+    document.body.style.userSelect = 'none'
+    document.body.style.webkitUserSelect = 'none'
+    document.body.style.mozUserSelect = 'none'
+  },
+
+  protectImages: function () {
+    const images = document.querySelectorAll('img')
+    images.forEach(function (img) {
+      img.style.pointerEvents = 'none'
+      img.draggable = false
+    })
+  },
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  protectionSuite.init()
+})
   </script>
 
 </body>
