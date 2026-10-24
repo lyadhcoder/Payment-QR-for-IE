@@ -5,6 +5,11 @@
     const UPI_LIST = [
 
       {
+        name: "HDFC CC-4020 HDFC APP UPI",
+        id: "7098286338@hdfc"
+      },
+
+      {
         name: "HDFC CC-4020 BHIM UPI",
         id: "thesourav@upi"
       },
@@ -14,13 +19,13 @@
         id: "indranielectronics@ibl"
       },
       {
-        name: "ICICI CC MARCHENT QR",
+        name: "ICICI CC-0040 MARCHENT QR",
         id: "indranielectronics@icici"
       },
 
       {
-        name: "HDFC CC-4020 MARCHENT QR BOX",
-        id: "Vyapar.177783680339@hdfcbank"
+        name: "ICICI CC-0040 ICICI APP MARCHENT UPI",
+        id: "indranielectronics.ibz@icici"
       }
 
       // Add more:
